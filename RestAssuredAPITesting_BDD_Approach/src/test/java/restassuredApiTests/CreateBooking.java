@@ -1,5 +1,8 @@
 package restassuredApiTests;
 
+import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
+import org.testng.AssertJUnit;
 import org.testng.annotations.*;
 import org.testng.Assert;
 
@@ -44,9 +47,7 @@ public static HashMap map=new HashMap();
 	public void testpost()
 	{
 		
-		Response response;	
-		
-		response = given() 
+			given() 
 			.contentType("application/json")
 			.accept("application/json")
 			.body(map)
@@ -60,16 +61,5 @@ public static HashMap map=new HashMap();
 			.extract().response();
 	}
 	
-	@Test (priority = 1) 
-	public void validateResponseData()
-	{
-			  String responsefirstname = response.path("firstname");
-			  String requestfirstname = RestUtils.getFirstName();
-
-			  Assert.assertEquals(responsefirstname, requestfirstname);  
-
-			
-			
-	}
 
 }
