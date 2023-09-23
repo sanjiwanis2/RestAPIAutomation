@@ -5,7 +5,7 @@
     <classes>
       <class name="restassuredApiTests.CreateBooking">
         <methods>
-          <include name="validateResponseData"/>
+          <include name="testpost"/>
           <include name="postdata"/>
         </methods>
       </class> <!-- restassuredApiTests.CreateBooking -->

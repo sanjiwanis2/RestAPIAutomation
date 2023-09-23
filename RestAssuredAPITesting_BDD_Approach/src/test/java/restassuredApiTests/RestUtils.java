@@ -8,7 +8,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 import io.restassured.matcher.ResponseAwareMatcher;
 import io.restassured.response.Response;
 
+import java.util.Random;   
+
 public class RestUtils {
+	
 	
 	public static String getBaseURI() {
 		return("https://restful-booker.herokuapp.com");
@@ -32,14 +35,16 @@ public class RestUtils {
 		return ("LastName"+generatedString);
 	}
 	
-	public static String getTotalPrice() {
-		String generatedInteger = RandomStringUtils.randomNumeric(10);
-		return (generatedInteger);
+	public static int getTotalPrice() {
+		Random random = new Random() ;
+		int x = random.nextInt(1000);   
+		return (x);
 	}
 	
-	public static String getDepositPaid() {
-		String generatedValue = RandomStringUtils.random(0, false, true);
-		return (generatedValue);
+	public static boolean getDepositPaid() {
+		Random random = new Random() ;
+		boolean m=random.nextBoolean(); 
+		return(m);
 	}
 	
 	public static String getCheckInDate() {
